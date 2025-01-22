@@ -13,12 +13,15 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         libwebp-dev \
         libxpm-dev \
         libgd-dev \
+        default-mysql-client \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
+        pdo \
         pdo_mysql \
+        mysqli \
         zip \
         intl \
         gd \
