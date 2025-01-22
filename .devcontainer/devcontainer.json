@@ -1,0 +1,21 @@
+{
+    "name": "Laravel Filament Development",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "onecentlin.laravel-blade",
+                "amiralizadeh9480.laravel-extra-intellisense",
+                "ryannaddy.laravel-artisan",
+                "Vue.volar",
+                "bradlc.vscode-tailwindcss"
+            ]
+        }
+    },
+    "forwardPorts": [8000],
+    "postCreateCommand": "composer install && php artisan key:generate && npm install && npm run build",
+    "remoteUser": "vscode"
+}
